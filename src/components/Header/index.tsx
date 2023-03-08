@@ -18,11 +18,15 @@ export function Header() {
         </Brand>
         <Actions>
           <LocationLink>
-            <MapPin size={24} />
+            <i>
+              <MapPin size={24} weight="fill" />
+            </i>
             <p>Porto Alegre, RS</p>
           </LocationLink>
           <CartLink>
-            <ShoppingCart size={24} />
+            <i>
+              <ShoppingCart size={24} weight="fill" />
+            </i>
           </CartLink>
         </Actions>
       </nav>

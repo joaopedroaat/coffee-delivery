@@ -35,9 +35,21 @@ const BaseActionLink = styled.a`
   border-radius: 8px;
 
   cursor: pointer;
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 export const LocationLink = styled(BaseActionLink)`
+  i {
+    color: ${(props) => props.theme.purple};
+  }
+
+  gap: 0.25rem;
+
   background-color: ${(props) => props.theme['purple-light']};
   color: ${(props) => props.theme['purple-dark']};
 `
