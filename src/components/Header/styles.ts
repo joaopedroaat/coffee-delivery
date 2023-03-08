@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  margin-bottom: 7.875rem;
   padding: 2em 0;
 
   nav {
