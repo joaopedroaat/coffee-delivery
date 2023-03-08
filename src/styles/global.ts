@@ -19,12 +19,9 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
-  
-  h1,h2 {
-    font-family: 'Baloo 2', cursive;
-  }
 
   h1 {
+    font-family: 'Baloo 2', cursive;
     color: ${(props) => props.theme['base-title']};
     font-weight: 800;
   }
