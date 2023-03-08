@@ -22,25 +22,25 @@ export function Home() {
           <InfoGrid>
             <InfoItem>
               <InfoIcon backgroundColor="yellow-dark">
-                <ShoppingCart size={18} weight="fill" />
+                <ShoppingCart size={'1rem'} weight="fill" />
               </InfoIcon>
               <p>Compra simples e segura</p>
             </InfoItem>
             <InfoItem>
               <InfoIcon backgroundColor="gray">
-                <Package size={18} weight="fill" />
+                <Package size={'1rem'} weight="fill" />
               </InfoIcon>
               <p>Embalagem mantém o café intacto</p>
             </InfoItem>
             <InfoItem>
               <InfoIcon backgroundColor="yellow">
-                <Timer size={18} weight="fill" />
+                <Timer size={'1rem'} weight="fill" />
               </InfoIcon>
               <p>Entrega rápida e rastreada</p>
             </InfoItem>
             <InfoItem>
               <InfoIcon backgroundColor="purple">
-                <Coffee size={18} weight="fill" />
+                <Coffee size={'1rem'} weight="fill" />
               </InfoIcon>
               <p>O café chega fresquinho até você</p>
             </InfoItem>
