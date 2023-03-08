@@ -67,3 +67,22 @@ export const InfoIcon = styled.div<InfoIconProps>`
   border-radius: 50%;
   padding: 0.625rem;
 `
+
+export const CoffeeSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  margin-top: 8.75rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+`
+
+export const CoffeeList = styled.div`
+  margin-top: 3.375rem;
+`

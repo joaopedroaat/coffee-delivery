@@ -1,5 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 import {
+  CoffeeList,
+  CoffeeSection,
   HomeContainer,
   InfoGrid,
   InfoIcon,
@@ -8,6 +10,7 @@ import {
 } from './styles'
 
 import coffeeDeliveryLandpageImage from '../../assets/coffeeDeliveryLandpageImage.svg'
+import { CoffeCard } from './components/CoffeeCard'
 
 export function Home() {
   return (
@@ -48,6 +51,12 @@ export function Home() {
         </div>
         <img src={coffeeDeliveryLandpageImage} alt="Café do Coffee Delivery" />
       </MainSection>
+      <CoffeeSection>
+        <h1>Nossos cafés</h1>
+        <CoffeeList>
+          <CoffeCard />
+        </CoffeeList>
+      </CoffeeSection>
     </HomeContainer>
   )
 }
