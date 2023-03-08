@@ -6,6 +6,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    width: 75%;
+    margin: 0 auto;
+    background: ${(props) => props.theme.background};
+  }
   
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
