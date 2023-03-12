@@ -74,7 +74,7 @@ export const CoffeeSection = styled.section`
   align-items: flex-start;
 
   width: 100%;
-  margin-top: 8.75rem;
+  margin: 8.75rem 0;
 
   h1 {
     font-size: 2rem;
