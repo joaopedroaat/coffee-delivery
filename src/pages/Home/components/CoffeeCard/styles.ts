@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { BaseButton } from '../../../../styles/BaseButton'
 
 export const CoffeeCardContainer = styled.div`
   display: flex;
@@ -8,11 +9,15 @@ export const CoffeeCardContainer = styled.div`
   width: 16rem;
   height: 19.375rem;
 
-  padding: 1.5rem 1.25rem;
+  padding: 1.25rem;
 
   background: ${(props) => props.theme['base-card']};
 
   border-radius: 6px 36px;
+
+  img {
+    margin-top: -2.5rem;
+  }
 `
 
 export const TagList = styled.div`
@@ -39,6 +44,8 @@ export const Description = styled.div`
   align-items: center;
   justify-content: center;
 
+  margin-bottom: 1.5rem;
+
   gap: 0.5rem;
 
   h1 {
@@ -48,7 +55,7 @@ export const Description = styled.div`
   }
 
   p {
-    font-size: 0.875;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.3;
 
@@ -67,41 +74,29 @@ export const FormContainer = styled.form`
   color: ${(props) => props.theme['base-text']};
 
   label {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.3;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.5rem;
 
     span {
-      font-family: 'Baloo 2', cursive;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: ${(props) => props.theme['base-subtitle']};
-      margin-left: 0.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 0.875rem;
+      margin-right: 0.25rem;
     }
   }
 
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 0.5rem;
-
-    input {
-      width: 50%;
-      background: ${(props) => props.theme['base-button']};
-      border: none;
-      padding: 0.5rem;
-    }
-
-    button {
-      padding: 0.5rem;
-      background: ${(props) => props.theme['purple-dark']};
-      color: ${(props) => props.theme['base-card']};
-
-      border: none;
-      border-radius: 8px;
-
-      cursor: pointer;
-    }
+  input {
+    width: 4.5rem;
+    border: none;
+    background: ${(props) => props.theme['base-button']};
+    padding: 0.5rem;
+    border-radius: 6px;
+    outline: none;
+    text-align: center;
   }
+`
+export const CartButton = styled(BaseButton)`
+  background-color: ${(props) => props.theme['purple-dark']};
+  color: ${(props) => props.theme.white};
 `

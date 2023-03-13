@@ -1,5 +1,5 @@
-import { ShoppingCart } from '@phosphor-icons/react'
 import {
+  CartButton,
   CoffeeCardContainer,
   Description,
   FormContainer,
@@ -8,6 +8,7 @@ import {
 } from './styles'
 
 import expressTraditional from '../../../../assets/coffees/expressTraditional.svg'
+import { ShoppingCartSimple } from '@phosphor-icons/react'
 
 export function CoffeCard() {
   return (
@@ -21,16 +22,14 @@ export function CoffeCard() {
         <p>O tradicional café feito com água quente e grãos moídos</p>
       </Description>
       <FormContainer>
-        <label>
-          R$
-          <span>9.00</span>
+        <label htmlFor="coffee-count">
+          <span>R$</span>
+          9,90
         </label>
-        <div>
-          <input name="coffeeCount" type="number" value={1} />
-          <button type="submit">
-            <ShoppingCart size={'1rem'} weight="fill" />
-          </button>
-        </div>
+        <input type="number" id="coffee-count" value={0} />
+        <CartButton type="submit">
+          <ShoppingCartSimple size={20} weight="fill" />
+        </CartButton>
       </FormContainer>
     </CoffeeCardContainer>
   )

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { BaseButton } from '../../styles/BaseButton'
 
 export const HeaderContainer = styled.header`
   margin-bottom: 7.875rem;
@@ -23,39 +24,14 @@ export const Actions = styled.div`
   gap: 0.75rem;
 `
 
-const BaseActionLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.5rem;
-
-  font-size: 0.875em;
-
-  border: none;
-  border-radius: 8px;
-
-  cursor: pointer;
-
-  i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`
-
-export const LocationLink = styled(BaseActionLink)`
-  i {
-    color: ${(props) => props.theme.purple};
-  }
-
+export const LocationLink = styled(BaseButton)`
   gap: 0.25rem;
 
   background-color: ${(props) => props.theme['purple-light']};
   color: ${(props) => props.theme['purple-dark']};
 `
 
-export const CartLink = styled(BaseActionLink)`
+export const CartLink = styled(BaseButton)`
   background-color: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
 `
