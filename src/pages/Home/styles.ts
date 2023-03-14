@@ -84,9 +84,21 @@ export const CoffeeSection = styled.section`
 `
 
 export const CoffeeList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
 
+  align-items: center;
+  justify-items: center;
+
+  width: 100%;
   margin-top: 3.375rem;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
