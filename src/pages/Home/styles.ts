@@ -84,5 +84,9 @@ export const CoffeeSection = styled.section`
 `
 
 export const CoffeeList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem 2rem;
+
   margin-top: 3.375rem;
 `

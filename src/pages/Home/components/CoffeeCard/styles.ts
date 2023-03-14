@@ -25,6 +25,8 @@ export const TagList = styled.div`
   justify-content: center;
   align-items: center;
 
+  gap: 0.25rem;
+
   margin-top: 1rem;
   margin-bottom: 1.25rem;
 `
@@ -32,6 +34,12 @@ export const TagList = styled.div`
 export const Tag = styled.span`
   background: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
+
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1.3;
+
+  text-transform: uppercase;
 
   padding: 0.25rem 0.5rem;
 
@@ -49,7 +57,7 @@ export const Description = styled.div`
   gap: 0.5rem;
 
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
     font-weight: 700;
     line-height: 1.3;
   }

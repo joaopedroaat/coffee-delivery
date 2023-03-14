@@ -7,24 +7,39 @@ import {
   TagList,
 } from './styles'
 
-import expressTraditional from '../../../../assets/coffees/expressTraditional.svg'
 import { ShoppingCartSimple } from '@phosphor-icons/react'
 
-export function CoffeCard() {
+interface CoffeeCardProps {
+  name: string
+  description: string
+  tags: string[]
+  img: string
+  price: number
+}
+
+export function CoffeCard({
+  name,
+  description,
+  tags,
+  img,
+  price,
+}: CoffeeCardProps) {
   return (
     <CoffeeCardContainer>
-      <img src={expressTraditional} alt="" />
+      <img src={`./src/assets/coffees/${img}`} alt="" />
       <TagList>
-        <Tag>Tradicional</Tag>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
       </TagList>
       <Description>
-        <h1>Expresso Tradicional</h1>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <h1>{name}</h1>
+        <p>{description}</p>
       </Description>
       <FormContainer>
         <label htmlFor="coffee-count">
           <span>R$</span>
-          9,90
+          {price.toFixed(2)}
         </label>
         <input type="number" id="coffee-count" value={0} />
         <CartButton type="submit">
