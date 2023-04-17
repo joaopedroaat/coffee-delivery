@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
   }
 
+  ul {
+    list-style: none;
+  }
+
   i {
     display: flex;
     justify-content: center;

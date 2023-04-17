@@ -1,0 +1,48 @@
+import { ShoppingCartSimple } from '@phosphor-icons/react'
+import {
+  CardForm,
+  CardImage,
+  CardSubmitButton,
+  CoffeeCardContainer,
+  Tag,
+  TagList,
+} from './styles'
+
+type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
+
+export interface ICoffee {
+  name: string
+  description: string
+  tags: ITag[]
+  img: string
+  price: number
+}
+
+interface CoffeeCardProps {
+  coffee: ICoffee
+}
+
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  return (
+    <CoffeeCardContainer>
+      <CardImage src={`./src/assets/coffeeImages/${coffee.img}`} alt="" />
+      <TagList>
+        {coffee.tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </TagList>
+      <h1>{coffee.name}</h1>
+      <p>{coffee.description}</p>
+      <CardForm>
+        <label>
+          R$<span>{coffee.price.toFixed(2)}</span>
+        </label>
+        <CardSubmitButton>
+          <i>
+            <ShoppingCartSimple weight="fill" />
+          </i>
+        </CardSubmitButton>
+      </CardForm>
+    </CoffeeCardContainer>
+  )
+}

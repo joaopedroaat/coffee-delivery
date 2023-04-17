@@ -1,13 +1,12 @@
+import { CoffeeList } from './components/CoffeeList'
 import { HomeInfo } from './components/HomeInfo'
-import { CoffeeSection, HomeContainer } from './styles'
+import { HomeContainer } from './styles'
 
 export function Home() {
   return (
     <HomeContainer>
       <HomeInfo />
-      <CoffeeSection>
-        <h1>Nossos cafés</h1>
-      </CoffeeSection>
+      <CoffeeList />
     </HomeContainer>
   )
 }
