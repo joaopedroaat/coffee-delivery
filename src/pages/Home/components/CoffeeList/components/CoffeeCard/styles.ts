@@ -64,6 +64,10 @@ export const Tag = styled.li`
 export const CardForm = styled.form`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
   gap: 0.5rem;
 
   label {
@@ -81,6 +85,13 @@ export const CardForm = styled.form`
       margin-left: 0.25rem;
     }
   }
+`
+
+export const FormSubmit = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 `
 
 export const CardSubmitButton = styled.button.attrs({

@@ -4,6 +4,7 @@ import {
   CardImage,
   CardSubmitButton,
   CoffeeCardContainer,
+  FormSubmit,
   Tag,
   TagList,
 } from './styles'
@@ -38,12 +39,14 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
         <label>
           R$<span>{coffee.price.toFixed(2)}</span>
         </label>
-        <StepperInput />
-        <CardSubmitButton>
-          <i>
-            <ShoppingCartSimple weight="fill" />
-          </i>
-        </CardSubmitButton>
+        <FormSubmit>
+          <StepperInput />
+          <CardSubmitButton>
+            <i>
+              <ShoppingCartSimple weight="fill" />
+            </i>
+          </CardSubmitButton>
+        </FormSubmit>
       </CardForm>
     </CoffeeCardContainer>
   )
