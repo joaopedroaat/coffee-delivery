@@ -94,9 +94,7 @@ export const FormSubmit = styled.div`
   gap: 0.5rem;
 `
 
-export const CardSubmitButton = styled.button.attrs({
-  type: 'submit',
-})`
+export const CardSubmitButton = styled.button`
   background: ${(props) => props.theme['purple-dark']};
   color: ${(props) => props.theme.white};
 

@@ -1,4 +1,6 @@
 import { ShoppingCartSimple } from '@phosphor-icons/react'
+import { FormEvent, useState } from 'react'
+import { StepperInput } from '../../../../../../components/StepperInput'
 import {
   CardForm,
   CardImage,
@@ -8,7 +10,6 @@ import {
   Tag,
   TagList,
 } from './styles'
-import { StepperInput } from '../../../../../../components/StepperInput'
 
 type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
 
@@ -20,11 +21,27 @@ export interface ICoffee {
   price: number
 }
 
+export interface ICartItem {
+  coffee: ICoffee
+  quantity: number
+}
+
 interface CoffeeCardProps {
   coffee: ICoffee
 }
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const [quantity, setQuantity] = useState(0)
+
+  function handleFormSubmit(evt: FormEvent) {
+    evt.preventDefault()
+
+    console.log({
+      coffee,
+      quantity,
+    } as ICartItem)
+  }
+
   return (
     <CoffeeCardContainer>
       <CardImage src={`./src/assets/coffeeImages/${coffee.img}`} alt="" />
@@ -35,13 +52,13 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
       </TagList>
       <h1>{coffee.name}</h1>
       <p>{coffee.description}</p>
-      <CardForm onSubmit={(evt) => evt.preventDefault()}>
+      <CardForm onSubmit={handleFormSubmit}>
         <label>
           R$<span>{coffee.price.toFixed(2)}</span>
         </label>
         <FormSubmit>
-          <StepperInput />
-          <CardSubmitButton>
+          <StepperInput value={quantity} handleValueChange={setQuantity} />
+          <CardSubmitButton type="submit">
             <i>
               <ShoppingCartSimple weight="fill" />
             </i>

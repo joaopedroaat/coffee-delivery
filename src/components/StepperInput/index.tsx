@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent } from 'react'
 import {
   DecreaseButton,
   IncreaseButton,
@@ -6,22 +6,23 @@ import {
   StepperInputContainer,
 } from './styles'
 
-export function StepperInput() {
-  const [value, setValue] = useState(0)
+interface StepperInputProps {
+  value: number
+  handleValueChange: (newValue: number) => void
+}
 
-  const handleDecrease = () => {
+export function StepperInput({ value, handleValueChange }: StepperInputProps) {
+  const handleDecrease = (evt: FormEvent) => {
+    evt.preventDefault()
     if (value > 0) {
-      setValue((currentState) => {
-        return currentState - 1
-      })
+      handleValueChange(value - 1)
     }
   }
 
-  const handleIncrease = () => {
+  const handleIncrease = (evt: FormEvent) => {
+    evt.preventDefault()
     if (value < 99) {
-      setValue((currentState) => {
-        return currentState + 1
-      })
+      handleValueChange(value + 1)
     }
   }
 
