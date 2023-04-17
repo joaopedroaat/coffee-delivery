@@ -62,6 +62,10 @@ export const Tag = styled.li`
 `
 
 export const CardForm = styled.form`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
   label {
     color: ${(props) => props.theme['base-text']};
 

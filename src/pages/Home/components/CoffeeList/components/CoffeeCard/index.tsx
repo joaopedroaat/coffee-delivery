@@ -7,6 +7,7 @@ import {
   Tag,
   TagList,
 } from './styles'
+import { StepperInput } from '../../../../../../components/StepperInput'
 
 type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
 
@@ -33,10 +34,11 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
       </TagList>
       <h1>{coffee.name}</h1>
       <p>{coffee.description}</p>
-      <CardForm>
+      <CardForm onSubmit={(evt) => evt.preventDefault()}>
         <label>
           R$<span>{coffee.price.toFixed(2)}</span>
         </label>
+        <StepperInput />
         <CardSubmitButton>
           <i>
             <ShoppingCartSimple weight="fill" />
