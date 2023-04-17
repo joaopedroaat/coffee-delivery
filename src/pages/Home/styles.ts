@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main``
+export const HomeContainer = styled.main`
+  padding-top: 5.75rem;
+`
 
 export const InfoSection = styled.section`
   display: flex;
