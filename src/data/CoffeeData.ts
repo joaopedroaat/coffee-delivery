@@ -1,4 +1,4 @@
-import { ICoffee } from '../pages/Home/components/CoffeeList/components/CoffeeCard'
+import { ICoffee } from '../pages/Home/components/CoffeeList/components/CoffeeCard/components/CoffeeCardForm'
 
 export const coffeeData: ICoffee[] = [
   {

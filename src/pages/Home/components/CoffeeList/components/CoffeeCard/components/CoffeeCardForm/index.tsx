@@ -1,11 +1,11 @@
 import { ShoppingCartSimple } from '@phosphor-icons/react'
 import { FormEvent, useContext, useState } from 'react'
-import { StepperInput } from '../../../../../../components/StepperInput'
+import { StepperInput } from '../../../../../../../../components/StepperInput'
 import {
   CartContext,
   ICartItem,
   ICoffee,
-} from '../../../../../../contexts/CartContext'
+} from '../../../../../../../../contexts/CartContext'
 import {
   CardForm,
   CardImage,
