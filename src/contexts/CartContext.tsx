@@ -42,18 +42,17 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       (item) => item.coffee.name === newItem.coffee.name,
     )
 
+    const newCart = [...cart]
+
+    // Remove existing item
     if (existingItemIndex !== -1) {
       const existingItem = cart[existingItemIndex]
-
-      if (existingItem.quantity !== newItem.quantity) {
-        const newCart = [...cart]
-        newCart.splice(existingItemIndex)
-        newCart.push(newItem)
-        setCart(newCart)
-      }
-    } else {
-      setCart([...cart, newItem])
+      if (existingItem) newCart.splice(existingItemIndex)
     }
+
+    newCart.push(newItem)
+
+    setCart(newCart)
   }
 
   return (
