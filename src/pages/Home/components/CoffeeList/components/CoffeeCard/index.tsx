@@ -48,7 +48,12 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
           R$<span>{coffee.price.toFixed(2)}</span>
         </label>
         <FormSubmit>
-          <StepperInput value={quantity} handleValueChange={setQuantity} />
+          <StepperInput
+            value={quantity}
+            min={0}
+            max={99}
+            handleValueChange={setQuantity}
+          />
           <CardSubmitButton type="submit">
             <i>
               <ShoppingCartSimple weight="fill" />

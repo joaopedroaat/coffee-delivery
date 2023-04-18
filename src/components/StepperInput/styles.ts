@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 export const StepperInputContainer = styled.div`
@@ -23,9 +24,7 @@ export const IncreaseButton = styled(Button)`
   border-radius: 0 6px 6px 0;
 `
 
-export const Input = styled.input.attrs({
-  type: 'number',
-})`
+export const Input = styled.input<InputHTMLAttributes<HTMLInputElement>>`
   -moz-appearance: none;
   appearance: none;
 
