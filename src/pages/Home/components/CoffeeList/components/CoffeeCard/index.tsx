@@ -1,6 +1,11 @@
 import { ShoppingCartSimple } from '@phosphor-icons/react'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 import { StepperInput } from '../../../../../../components/StepperInput'
+import {
+  CartContext,
+  ICartItem,
+  ICoffee,
+} from '../../../../../../contexts/CartContext'
 import {
   CardForm,
   CardImage,
@@ -11,32 +16,18 @@ import {
   TagList,
 } from './styles'
 
-type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
-
-export interface ICoffee {
-  name: string
-  description: string
-  tags: ITag[]
-  img: string
-  price: number
-}
-
-export interface ICartItem {
-  coffee: ICoffee
-  quantity: number
-}
-
 interface CoffeeCardProps {
   coffee: ICoffee
 }
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
   const [quantity, setQuantity] = useState(0)
+  const { addItemToCart } = useContext(CartContext)
 
   function handleFormSubmit(evt: FormEvent) {
     evt.preventDefault()
 
-    console.log({
+    addItemToCart({
       coffee,
       quantity,
     } as ICartItem)
