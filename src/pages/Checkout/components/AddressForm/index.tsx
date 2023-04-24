@@ -3,13 +3,13 @@ import {
   AddressFormContainer,
   AddressInput,
   AddressGrid,
-  AddressHeader,
+  AddressFormHeader,
 } from './styles'
 
 export function AddressForm() {
   return (
     <AddressFormContainer>
-      <AddressHeader>
+      <AddressFormHeader>
         <i>
           <MapPinLine />
         </i>
@@ -17,7 +17,7 @@ export function AddressForm() {
           <h1>Endereço de Entrega</h1>
           <p>Informe o endereço onde deseja receber seu pedido</p>
         </div>
-      </AddressHeader>
+      </AddressFormHeader>
       <AddressGrid>
         <AddressInput placeholder="CEP" area="cep" />
         <AddressInput placeholder="Rua" area="street" />

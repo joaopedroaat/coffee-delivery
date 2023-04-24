@@ -3,7 +3,7 @@ import { FormContainer, FormHeader } from '../../styles'
 
 export const AddressFormContainer = styled(FormContainer)``
 
-export const AddressHeader = styled(FormHeader)`
+export const AddressFormHeader = styled(FormHeader)`
   i {
     color: ${(props) => props.theme['yellow-dark']};
   }
