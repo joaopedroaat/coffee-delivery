@@ -1,8 +1,23 @@
-import { AddressFormContainer, AddressInput, AddressGrid } from './styles'
+import { MapPinLine } from '@phosphor-icons/react'
+import {
+  AddressFormContainer,
+  AddressInput,
+  AddressGrid,
+  FormHeader,
+} from './styles'
 
 export function AddressForm() {
   return (
     <AddressFormContainer>
+      <FormHeader>
+        <i>
+          <MapPinLine />
+        </i>
+        <div>
+          <h1>Endereço de Entrega</h1>
+          <p>Informe o endereço onde deseja receber seu pedido</p>
+        </div>
+      </FormHeader>
       <AddressGrid>
         <AddressInput placeholder="CEP" area="cep" />
         <AddressInput placeholder="Rua" area="street" />
