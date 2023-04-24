@@ -1,44 +1,11 @@
 import styled from 'styled-components'
+import { FormContainer, FormHeader } from '../../styles'
 
-export const AddressFormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+export const AddressFormContainer = styled(FormContainer)``
 
-  background: ${(props) => props.theme['base-card']};
-
-  padding: 2.5rem;
-  border-radius: 6px;
-`
-
-export const FormHeader = styled.header`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-
-  display: flex;
-  gap: 0.5rem;
-
+export const AddressHeader = styled(FormHeader)`
   i {
-    color: ${(props) => props.theme.yellow};
-    align-self: flex-start;
-    font-size: 1.5rem;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-
-  h1 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: ${(props) => props.theme['base-subtitle']};
-  }
-
-  p {
-    font-size: 0.875rem;
-    color: ${(props) => props.theme['base-text']};
+    color: ${(props) => props.theme['yellow-dark']};
   }
 `
 
