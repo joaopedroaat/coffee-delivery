@@ -1,4 +1,5 @@
 import { AddressForm } from './components/AddressForm'
+import { PaymentForm } from './components/PaymentForm'
 import { CheckoutContainer } from './styles'
 
 export function Checkout() {
@@ -6,6 +7,7 @@ export function Checkout() {
     <CheckoutContainer>
       <form>
         <AddressForm />
+        <PaymentForm />
       </form>
     </CheckoutContainer>
   )
