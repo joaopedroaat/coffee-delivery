@@ -1,4 +1,5 @@
 import { AddressForm } from './components/AddressForm'
+import { CartForm } from './components/CartForm'
 import { PaymentForm } from './components/PaymentForm'
 import { CheckoutContainer } from './styles'
 
@@ -8,6 +9,7 @@ export function Checkout() {
       <form>
         <AddressForm />
         <PaymentForm />
+        <CartForm />
       </form>
     </CheckoutContainer>
   )
