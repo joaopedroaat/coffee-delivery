@@ -24,13 +24,17 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
   const [quantity, setQuantity] = useState(0)
   const { addItemToCart } = useContext(CartContext)
 
-  function handleFormSubmit(evt: FormEvent) {
+  function handleCoffeeSubmit(evt: FormEvent) {
     evt.preventDefault()
-
     addItemToCart({
       coffee,
       quantity,
     } as ICartItem)
+    setQuantity(0)
+  }
+
+  function handleQuantityChange(value: number) {
+    setQuantity(value)
   }
 
   return (
@@ -43,17 +47,12 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
       </TagList>
       <h1>{coffee.name}</h1>
       <p>{coffee.description}</p>
-      <CardForm onSubmit={handleFormSubmit}>
+      <CardForm onSubmit={handleCoffeeSubmit}>
         <label>
           R$<span>{coffee.price.toFixed(2)}</span>
         </label>
         <FormSubmit>
-          <StepperInput
-            value={quantity}
-            min={0}
-            max={99}
-            handleValueChange={setQuantity}
-          />
+          <StepperInput value={quantity} onChange={handleQuantityChange} />
           <CardSubmitButton type="submit">
             <i>
               <ShoppingCartSimple weight="fill" />

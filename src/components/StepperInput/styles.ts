@@ -1,4 +1,3 @@
-import { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 export const StepperInputContainer = styled.div`
@@ -24,19 +23,10 @@ export const IncreaseButton = styled(Button)`
   border-radius: 0 6px 6px 0;
 `
 
-export const Input = styled.input<InputHTMLAttributes<HTMLInputElement>>`
-  -moz-appearance: none;
-  appearance: none;
-
-  text-align: center;
-  border: none;
+export const Input = styled.span`
   background: ${(props) => props.theme['base-button']};
-
-  outline: none;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 `

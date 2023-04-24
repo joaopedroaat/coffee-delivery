@@ -1,4 +1,4 @@
-import { FormEvent, InputHTMLAttributes } from 'react'
+import { FormEvent } from 'react'
 import {
   DecreaseButton,
   IncreaseButton,
@@ -6,45 +6,30 @@ import {
   StepperInputContainer,
 } from './styles'
 
-interface StepperInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface StepperInputProps {
   value: number
-  min: number
-  max: number
-  handleValueChange: (newValue: number) => void
+  onChange: (newValue: number) => void
 }
 
-export function StepperInput({
-  value,
-  min,
-  max,
-  handleValueChange,
-  ...rest
-}: StepperInputProps) {
+export function StepperInput({ value, onChange }: StepperInputProps) {
   const handleDecrease = (evt: FormEvent) => {
     evt.preventDefault()
     if (value > 0) {
-      handleValueChange(value - 1)
+      onChange(value - 1)
     }
   }
 
   const handleIncrease = (evt: FormEvent) => {
     evt.preventDefault()
     if (value < 99) {
-      handleValueChange(value + 1)
+      onChange(value + 1)
     }
   }
 
   return (
     <StepperInputContainer>
       <DecreaseButton onClick={handleDecrease}>-</DecreaseButton>
-      <Input
-        type="number"
-        value={value}
-        min={min}
-        max={max}
-        readOnly
-        {...rest}
-      />
+      <Input>{value}</Input>
       <IncreaseButton onClick={handleIncrease}>+</IncreaseButton>
     </StepperInputContainer>
   )
