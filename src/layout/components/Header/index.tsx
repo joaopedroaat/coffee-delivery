@@ -4,12 +4,17 @@ import {
   HeaderNavigation,
   CartButton,
   LocationButton,
+  CartItemCount,
 } from './styles'
 
 import logo from '../../../assets/coffee-delivery-logo.svg'
 import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../../contexts/CartContext'
 
 export function Header() {
+  const { cart } = useContext(CartContext)
+
   return (
     <HeaderContainer>
       <NavLink to="/" title="Início">
@@ -27,6 +32,8 @@ export function Header() {
             <i>
               <ShoppingCart weight="fill" />
             </i>
+
+            {cart.length > 0 && <CartItemCount>{cart.length}</CartItemCount>}
           </CartButton>
         </NavLink>
       </HeaderNavigation>
