@@ -1,5 +1,10 @@
+import { CartList } from './components/CartList'
 import { CartFormContainer } from './styles'
 
 export function CartForm() {
-  return <CartFormContainer>Teste</CartFormContainer>
+  return (
+    <CartFormContainer>
+      <CartList />
+    </CartFormContainer>
+  )
 }
