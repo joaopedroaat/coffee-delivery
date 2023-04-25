@@ -4,11 +4,11 @@ import { CartListItem } from './components/CartListItem'
 import { CartListContainer } from './styles'
 
 export function CartList() {
-  const { cart } = useContext(CartContext)
+  const { items } = useContext(CartContext)
 
   return (
     <CartListContainer>
-      {cart.map((item) => (
+      {items.map((item) => (
         <CartListItem key={item.coffee.name} item={item} />
       ))}
     </CartListContainer>

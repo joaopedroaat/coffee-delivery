@@ -13,7 +13,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../../contexts/CartContext'
 
 export function Header() {
-  const { cart } = useContext(CartContext)
+  const { items } = useContext(CartContext)
 
   return (
     <HeaderContainer>
@@ -33,7 +33,7 @@ export function Header() {
               <ShoppingCart weight="fill" />
             </i>
 
-            {cart.length > 0 && <CartItemCount>{cart.length}</CartItemCount>}
+            {items.length > 0 && <CartItemCount>{items.length}</CartItemCount>}
           </CartButton>
         </NavLink>
       </HeaderNavigation>

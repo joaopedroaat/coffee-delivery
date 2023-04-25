@@ -1,6 +1,5 @@
 import { Trash } from '@phosphor-icons/react'
 import { StepperInput } from '../../../../../../../../components/StepperInput'
-import { ICartItem } from '../../../../../../../../contexts/CartContext'
 import {
   CartItemImage,
   CartListItemContainer,
@@ -9,9 +8,10 @@ import {
   Info,
   TrashButton,
 } from './styles'
+import { CartItem } from '../../../../../../../../reducers/cart/reducer'
 
 interface CartListItemProps {
-  item: ICartItem
+  item: CartItem
 }
 
 export function CartListItem({ item }: CartListItemProps) {

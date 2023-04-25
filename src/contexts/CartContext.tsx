@@ -1,65 +1,55 @@
-import { ReactNode, createContext, useEffect, useState } from 'react'
+import { ReactNode, createContext, useReducer } from 'react'
+import {
+  addItemAction,
+  decrementItemAction,
+  incrementItemAction,
+  removeItemAction,
+} from '../reducers/cart/actions'
+import { CartItem, Coffee, cartReducer } from '../reducers/cart/reducer'
 
-// Declaração de tipos
-type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
-
-export interface ICoffee {
-  name: string
-  description: string
-  tags: ITag[]
-  img: string
-  price: number
+interface CartContextType {
+  items: CartItem[]
+  addItem: (coffee: Coffee, quantity: number) => void
+  incrementItem: (coffee: Coffee) => void
+  decrementItem: (coffee: Coffee) => void
+  removeItem: (coffee: Coffee) => void
 }
 
-export interface ICartItem {
-  coffee: ICoffee
-  quantity: number
-}
-
-// Criação do context
-interface ICartContext {
-  cart: ICartItem[]
-  addItemToCart: (newItem: ICartItem) => void
-}
-
-export const CartContext = createContext({} as ICartContext)
-
-// Criação do provider
+export const CartContext = createContext({} as CartContextType)
 
 interface CartContextProviderProps {
   children: ReactNode
 }
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cart, setCart] = useState([] as ICartItem[])
+  const [cartState, dispatch] = useReducer(cartReducer, { items: [] })
 
-  useEffect(() => {
-    console.log(cart)
-  }, [cart])
+  const { items } = cartState
 
-  function addItemToCart(newItem: ICartItem) {
-    const existingItemIndex = cart.findIndex(
-      (item) => item.coffee.name === newItem.coffee.name,
-    )
+  function addItem(coffee: Coffee, quantity: number) {
+    dispatch(addItemAction(coffee, quantity))
+  }
 
-    const newCart = [...cart]
+  function incrementItem(coffee: Coffee) {
+    dispatch(incrementItemAction(coffee))
+  }
 
-    // Remove existing item
-    if (existingItemIndex !== -1) {
-      const existingItem = cart[existingItemIndex]
-      if (existingItem) newCart.splice(existingItemIndex)
-    }
+  function decrementItem(coffee: Coffee) {
+    dispatch(decrementItemAction(coffee))
+  }
 
-    newCart.push(newItem)
-
-    setCart(newCart)
+  function removeItem(coffee: Coffee) {
+    dispatch(removeItemAction(coffee))
   }
 
   return (
     <CartContext.Provider
       value={{
-        cart,
-        addItemToCart,
+        items,
+        addItem,
+        incrementItem,
+        decrementItem,
+        removeItem,
       }}
     >
       {children}
