@@ -1,13 +1,13 @@
 import { Budget } from './components/Budget'
 import { CartList } from './components/CartList'
-import { CartFormContainer } from './styles'
+import { CartFormButton, CartFormContainer } from './styles'
 
 export function CartForm() {
   return (
     <CartFormContainer>
       <CartList />
       <Budget />
-      <button type="submit">Submit Form</button>
+      <CartFormButton type="submit">Confirmar Pedido</CartFormButton>
     </CartFormContainer>
   )
 }

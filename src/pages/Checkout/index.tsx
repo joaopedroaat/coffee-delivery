@@ -7,7 +7,7 @@ import { CheckoutContainer } from './styles'
 export function Checkout() {
   function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
-    console.log('Ai')
+    console.log('Form Submit')
   }
 
   return (
