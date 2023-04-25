@@ -13,9 +13,15 @@ export function Checkout() {
   return (
     <CheckoutContainer>
       <form onSubmit={handleSubmit}>
-        <AddressForm />
-        <PaymentForm />
-        <CartForm />
+        <div>
+          <h1>Complete seu pedido</h1>
+          <AddressForm />
+          <PaymentForm />
+        </div>
+        <div>
+          <h1>Cafés selecionados</h1>
+          <CartForm />
+        </div>
       </form>
     </CheckoutContainer>
   )

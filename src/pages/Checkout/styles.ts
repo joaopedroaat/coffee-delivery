@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 
-export const CheckoutContainer = styled.main``
+export const CheckoutContainer = styled.main`
+  padding-top: 2.5rem;
+
+  h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.125rem;
+    color: ${(props) => props.theme['base-subtitle']};
+    margin-bottom: 1rem;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: 2rem;
+    align-items: flex-start;
+  }
+`
 
 export const FormContainer = styled.div`
   display: flex;
