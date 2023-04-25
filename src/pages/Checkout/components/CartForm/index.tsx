@@ -5,6 +5,7 @@ export function CartForm() {
   return (
     <CartFormContainer>
       <CartList />
+      <button type="submit">Submit Form</button>
     </CartFormContainer>
   )
 }

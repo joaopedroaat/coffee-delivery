@@ -1,5 +1,8 @@
 import { Trash } from '@phosphor-icons/react'
+import { useContext } from 'react'
 import { StepperInput } from '../../../../../../../../components/StepperInput'
+import { CartContext } from '../../../../../../../../contexts/CartContext'
+import { CartItem } from '../../../../../../../../reducers/cart/reducer'
 import {
   CartItemImage,
   CartListItemContainer,
@@ -8,16 +11,25 @@ import {
   Info,
   TrashButton,
 } from './styles'
-import { CartItem } from '../../../../../../../../reducers/cart/reducer'
 
 interface CartListItemProps {
   item: CartItem
 }
 
 export function CartListItem({ item }: CartListItemProps) {
-  function handleProductQuantityChange() {}
+  const { incrementItem, decrementItem, removeItem } = useContext(CartContext)
 
-  function handleTrashButtonClick() {}
+  function handleProductQuantityChange(value: number) {
+    if (item.quantity < value) {
+      incrementItem(item.coffee)
+    } else {
+      decrementItem(item.coffee)
+    }
+  }
+
+  function handleTrashButtonClick() {
+    removeItem(item.coffee)
+  }
 
   return (
     <CartListItemContainer>
