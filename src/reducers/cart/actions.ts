@@ -1,15 +1,37 @@
-import { CartAction, Coffee } from './reducer'
+import { Coffee } from './reducer'
 
+/* eslint-disable no-unused-vars */
 export enum CartActionTypes {
-  // eslint-disable-next-line no-unused-vars
   ADD_ITEM = 'ADD_ITEM',
-  // eslint-disable-next-line no-unused-vars
   REMOVE_ITEM = 'REMOVE_ITEM',
-  // eslint-disable-next-line no-unused-vars
   INCREMENT__ITEM = 'INCREMENT_ITEM',
-  // eslint-disable-next-line no-unused-vars
   DECREMENT_ITEM = 'DECREMENT_ITEM',
 }
+/* eslint-enable no-unused-vars */
+
+interface AddAction {
+  type: CartActionTypes.ADD_ITEM
+  payload: {
+    item: Coffee
+    quantity: number
+  }
+}
+
+interface UpdateAction {
+  type: CartActionTypes.INCREMENT__ITEM | CartActionTypes.DECREMENT_ITEM
+  payload: {
+    item: Coffee
+  }
+}
+
+interface DeleteAction {
+  type: CartActionTypes.REMOVE_ITEM
+  payload: {
+    item: Coffee
+  }
+}
+
+export type CartAction = AddAction | UpdateAction | DeleteAction
 
 export function addItemAction(item: Coffee, quantity: number): CartAction {
   return {

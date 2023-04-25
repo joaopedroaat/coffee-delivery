@@ -1,6 +1,6 @@
 import { produce } from 'immer'
 
-import { CartActionTypes } from './actions'
+import { CartAction, CartActionTypes } from './actions'
 
 type ITag = 'tradicional' | 'gelado' | 'com leite' | 'especial' | 'alcoólico'
 
@@ -20,30 +20,6 @@ export interface CartItem {
 interface CartState {
   items: CartItem[]
 }
-
-interface AddAction {
-  type: CartActionTypes.ADD_ITEM
-  payload: {
-    item: Coffee
-    quantity: number
-  }
-}
-
-interface UpdateAction {
-  type: CartActionTypes.INCREMENT__ITEM | CartActionTypes.DECREMENT_ITEM
-  payload: {
-    item: Coffee
-  }
-}
-
-interface DeleteAction {
-  type: CartActionTypes.REMOVE_ITEM
-  payload: {
-    item: Coffee
-  }
-}
-
-export type CartAction = AddAction | UpdateAction | DeleteAction
 
 export function cartReducer(state: CartState, action: CartAction) {
   switch (action.type) {
