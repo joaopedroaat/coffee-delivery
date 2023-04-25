@@ -1,4 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from '@phosphor-icons/react'
+import { ChangeEvent, useState } from 'react'
 import {
   PaymentFormContainer,
   PaymentFormHeader,
@@ -6,7 +7,26 @@ import {
   PaymentMethodList,
 } from './styles'
 
-export function PaymentForm() {
+export type PaymentType = 'credit' | 'debit' | 'cash'
+
+interface PaymentFormProps {
+  initialPaymentType: PaymentType
+  onPaymentTypeChange: (paymentType: PaymentType) => void
+}
+
+export function PaymentForm({
+  initialPaymentType,
+  onPaymentTypeChange,
+}: PaymentFormProps) {
+  const [paymentType, setPaymentType] =
+    useState<PaymentType>(initialPaymentType)
+
+  function handlePaymentTypeChange(evt: ChangeEvent<HTMLInputElement>) {
+    const newPaymentType = evt.target.value as PaymentType
+    setPaymentType(newPaymentType)
+    onPaymentTypeChange(newPaymentType)
+  }
+
   return (
     <PaymentFormContainer>
       <PaymentFormHeader>
@@ -22,7 +42,14 @@ export function PaymentForm() {
       </PaymentFormHeader>
       <PaymentMethodList>
         <PaymentMethod>
-          <input type="radio" id="credit" name="payment" />
+          <input
+            type="radio"
+            checked={paymentType === 'credit'}
+            value="credit"
+            onChange={handlePaymentTypeChange}
+            id="credit"
+            name="payment"
+          />
           <div>
             <i>
               <CreditCard />
@@ -31,7 +58,14 @@ export function PaymentForm() {
           </div>
         </PaymentMethod>
         <PaymentMethod>
-          <input type="radio" id="debit" name="payment" />
+          <input
+            type="radio"
+            checked={paymentType === 'debit'}
+            value="debit"
+            onChange={handlePaymentTypeChange}
+            id="debit"
+            name="payment"
+          />
           <div>
             <i>
               <Bank />
@@ -40,7 +74,14 @@ export function PaymentForm() {
           </div>
         </PaymentMethod>
         <PaymentMethod>
-          <input type="radio" id="cash" name="payment" />
+          <input
+            type="radio"
+            checked={paymentType === 'cash'}
+            value="cash"
+            onChange={handlePaymentTypeChange}
+            id="cash"
+            name="payment"
+          />
           <div>
             <i>
               <Money />

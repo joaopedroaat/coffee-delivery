@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { Address, AddressForm } from './components/AddressForm'
 import { CartForm } from './components/CartForm'
-import { PaymentForm } from './components/PaymentForm'
+import { PaymentForm, PaymentType } from './components/PaymentForm'
 import { CheckoutContainer } from './styles'
 
 export function Checkout() {
@@ -15,13 +15,19 @@ export function Checkout() {
     street: '',
   })
 
+  const [paymentType, setPaymentType] = useState<PaymentType>('credit')
+
   function handleAddressChange(newAddress: Address) {
     setAddress(newAddress)
   }
 
+  function handlePaymenTypeChange(newPaymentType: PaymentType) {
+    setPaymentType(newPaymentType)
+  }
+
   function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
-    console.log('Form Submit')
+    console.log(address, paymentType)
   }
 
   return (
@@ -33,7 +39,10 @@ export function Checkout() {
             initialAddress={address}
             onAddressChange={handleAddressChange}
           />
-          <PaymentForm />
+          <PaymentForm
+            initialPaymentType={paymentType}
+            onPaymentTypeChange={handlePaymenTypeChange}
+          />
         </div>
         <div>
           <h1>Cafés selecionados</h1>
