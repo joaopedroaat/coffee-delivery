@@ -9,7 +9,7 @@ export function Budget() {
     (acc, item) => item.coffee.price * item.quantity + acc,
     0,
   )
-  const deliveryValue = 3.5
+  const deliveryValue = itemsValue ? 3.5 : 0
   const total = itemsValue + deliveryValue
 
   return (
