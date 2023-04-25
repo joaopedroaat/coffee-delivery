@@ -3,6 +3,7 @@ import { Address, AddressForm } from './components/AddressForm'
 import { CartForm } from './components/CartForm'
 import { PaymentForm, PaymentType } from './components/PaymentForm'
 import { CheckoutContainer } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export function Checkout() {
   const [address, setAddress] = useState<Address>({
@@ -17,6 +18,8 @@ export function Checkout() {
 
   const [paymentType, setPaymentType] = useState<PaymentType>('credit')
 
+  const navigate = useNavigate()
+
   function handleAddressChange(newAddress: Address) {
     setAddress(newAddress)
   }
@@ -28,6 +31,7 @@ export function Checkout() {
   function handleSubmit(evt: FormEvent) {
     evt.preventDefault()
     console.log(address, paymentType)
+    navigate('/success')
   }
 
   return (
