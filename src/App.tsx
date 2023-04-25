@@ -1,9 +1,10 @@
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import { Router } from './Router'
+import { CartContextProvider } from './contexts/CartContext'
+import { CheckoutContextProvider } from './contexts/CheckoutContext'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
-import { Router } from './Router'
-import { BrowserRouter } from 'react-router-dom'
-import { CartContextProvider } from './contexts/CartContext'
 
 export function App() {
   return (
@@ -11,7 +12,9 @@ export function App() {
       <GlobalStyle />
       <BrowserRouter>
         <CartContextProvider>
-          <Router />
+          <CheckoutContextProvider>
+            <Router />
+          </CheckoutContextProvider>
         </CartContextProvider>
       </BrowserRouter>
     </ThemeProvider>

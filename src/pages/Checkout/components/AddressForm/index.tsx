@@ -1,36 +1,18 @@
 import { MapPinLine } from '@phosphor-icons/react'
+import { ChangeEvent, useContext } from 'react'
+import { Address, CheckoutContext } from '../../../../contexts/CheckoutContext'
 import {
   AddressFormContainer,
-  AddressInput,
-  AddressGrid,
   AddressFormHeader,
+  AddressGrid,
+  AddressInput,
 } from './styles'
-import { ChangeEvent, useState } from 'react'
 
-export interface Address {
-  cep: string
-  street: string
-  number: string
-  complement: string
-  district: string
-  city: string
-  state: string
-}
-
-interface AddressFormProps {
-  initialAddress: Address
-  onAddressChange: (address: Address) => void
-}
-
-export function AddressForm({
-  initialAddress,
-  onAddressChange,
-}: AddressFormProps) {
-  const [address, setAddress] = useState<Address>(initialAddress)
+export function AddressForm() {
+  const { address, changeAddress } = useContext(CheckoutContext)
 
   function handleAddressChange(newAddress: Address) {
-    setAddress(newAddress)
-    onAddressChange(newAddress)
+    changeAddress(newAddress)
   }
 
   function handleCepChange(evt: ChangeEvent<HTMLInputElement>) {

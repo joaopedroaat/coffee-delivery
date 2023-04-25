@@ -1,5 +1,9 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from '@phosphor-icons/react'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useContext } from 'react'
+import {
+  CheckoutContext,
+  PaymentType,
+} from '../../../../contexts/CheckoutContext'
 import {
   PaymentFormContainer,
   PaymentFormHeader,
@@ -7,24 +11,11 @@ import {
   PaymentMethodList,
 } from './styles'
 
-export type PaymentType = 'credit' | 'debit' | 'cash'
-
-interface PaymentFormProps {
-  initialPaymentType: PaymentType
-  onPaymentTypeChange: (paymentType: PaymentType) => void
-}
-
-export function PaymentForm({
-  initialPaymentType,
-  onPaymentTypeChange,
-}: PaymentFormProps) {
-  const [paymentType, setPaymentType] =
-    useState<PaymentType>(initialPaymentType)
+export function PaymentForm() {
+  const { paymentType, changePaymentType } = useContext(CheckoutContext)
 
   function handlePaymentTypeChange(evt: ChangeEvent<HTMLInputElement>) {
-    const newPaymentType = evt.target.value as PaymentType
-    setPaymentType(newPaymentType)
-    onPaymentTypeChange(newPaymentType)
+    changePaymentType(evt.target.value as PaymentType)
   }
 
   return (
