@@ -6,6 +6,7 @@ export const CartFormContainer = styled(FormContainer)`
 `
 
 export const CartFormButton = styled.button`
+  width: 100%;
   background: ${(props) => props.theme.yellow};
   color: ${(props) => props.theme.white};
 
