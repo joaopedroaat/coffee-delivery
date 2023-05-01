@@ -8,6 +8,12 @@ import {
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
 
+enum PaymentEnum {
+  cash = 'Dinheiro',
+  credit = 'Cartão de Crédito',
+  debit = 'Cartão de Débito',
+}
+
 export function Success() {
   const { address, paymentType } = useContext(CheckoutContext)
 
@@ -53,7 +59,7 @@ export function Success() {
             <div>
               <p>Pagamento na entrega</p>
               <p>
-                <span>{paymentType}</span>
+                <span>{PaymentEnum[paymentType]}</span>
               </p>
             </div>
           </li>
