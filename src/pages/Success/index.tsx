@@ -8,11 +8,13 @@ import {
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
 
+/* eslint-disable no-unused-vars */
 enum PaymentEnum {
   cash = 'Dinheiro',
   credit = 'Cartão de Crédito',
   debit = 'Cartão de Débito',
 }
+/* eslint-enable no-unused-vars */
 
 export function Success() {
   const { address, paymentType } = useContext(CheckoutContext)
