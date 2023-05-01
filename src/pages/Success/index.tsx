@@ -3,6 +3,7 @@ import {
   DeliveryInfoBox,
   DeliveryInfoContainer,
   SuccessContainer,
+  ListIcon,
 } from './styles'
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
@@ -12,34 +13,49 @@ export function Success() {
 
   return (
     <SuccessContainer>
-      <h1>Uhu! Pedido confirmado</h1>
-      <p>Agora é só aguardar que logo o café chegará até você</p>
+      <div>
+        <h1>Uhu! Pedido confirmado</h1>
+        <p>Agora é só aguardar que logo o café chegará até você</p>
+      </div>
       <DeliveryInfoContainer>
         <DeliveryInfoBox>
           <li>
-            <i>
+            <ListIcon fillColor="purple">
               <MapPin weight="fill" />
-            </i>
-            <p>
-              Entrega em {address.street}, {address.number}
-            </p>
-            <p>
-              {address.district} - {address.city}, {address.state}
-            </p>
+            </ListIcon>
+            <div>
+              <p>
+                Entrega em{' '}
+                <span>
+                  {address.street}, {address.number}
+                </span>
+              </p>
+              <p>
+                {address.district} - {address.city}, {address.state}
+              </p>
+            </div>
           </li>
           <li>
-            <i>
+            <ListIcon fillColor="yellow">
               <Timer weight="fill" />
-            </i>
-            <p>Previsão de entrega</p>
-            <p>20 min - 30 min </p>
+            </ListIcon>
+            <div>
+              <p>Previsão de entrega</p>
+              <p>
+                <span>20 min - 30 min</span>
+              </p>
+            </div>
           </li>
           <li>
-            <i>
+            <ListIcon fillColor="yellow-dark">
               <CurrencyDollar />
-            </i>
-            <p>Pagamento na entrega</p>
-            <p>{paymentType}</p>
+            </ListIcon>
+            <div>
+              <p>Pagamento na entrega</p>
+              <p>
+                <span>{paymentType}</span>
+              </p>
+            </div>
           </li>
         </DeliveryInfoBox>
         <div>
