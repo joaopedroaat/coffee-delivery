@@ -25,7 +25,7 @@ export const SuccessContainer = styled.main`
 export const DeliveryInfoContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 6.375rem;
 `
 
