@@ -81,5 +81,9 @@ export function cartReducer(state: CartState, action: CartAction) {
 
         draft.items.splice(coffeeIndex, 1)
       })
+    case CartActionTypes.EMPTY_CART:
+      return produce(state, (draft) => {
+        draft.items.splice(0, draft.items.length)
+      })
   }
 }

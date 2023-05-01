@@ -6,6 +6,7 @@ export enum CartActionTypes {
   REMOVE_ITEM = 'REMOVE_ITEM',
   INCREMENT__ITEM = 'INCREMENT_ITEM',
   DECREMENT_ITEM = 'DECREMENT_ITEM',
+  EMPTY_CART = 'EMPTY_CART',
 }
 /* eslint-enable no-unused-vars */
 
@@ -31,7 +32,11 @@ interface DeleteAction {
   }
 }
 
-export type CartAction = AddAction | UpdateAction | DeleteAction
+interface EmptyCart {
+  type: CartActionTypes.EMPTY_CART
+}
+
+export type CartAction = AddAction | UpdateAction | DeleteAction | EmptyCart
 
 export function addItemAction(item: Coffee, quantity: number): CartAction {
   return {
@@ -67,5 +72,11 @@ export function decrementItemAction(item: Coffee): CartAction {
     payload: {
       item,
     },
+  }
+}
+
+export function emptyCartAction(): CartAction {
+  return {
+    type: CartActionTypes.EMPTY_CART,
   }
 }
