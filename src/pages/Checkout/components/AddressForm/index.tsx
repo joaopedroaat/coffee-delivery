@@ -77,7 +77,7 @@ export function AddressForm() {
           required
         />
         <AddressInput
-          placeholder="Compemento"
+          placeholder="Complemento"
           value={address.complement}
           onChange={handleComplementChange}
           area="complement"
