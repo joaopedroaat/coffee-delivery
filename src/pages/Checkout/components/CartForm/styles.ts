@@ -21,4 +21,9 @@ export const CartFormButton = styled.button`
   font-size: 0.875rem;
 
   cursor: pointer;
+
+  :disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+  }
 `
