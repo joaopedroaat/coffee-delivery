@@ -60,18 +60,21 @@ export function AddressForm() {
           value={address.cep}
           onChange={handleCepChange}
           area="cep"
+          required
         />
         <AddressInput
           placeholder="Rua"
           value={address.street}
           onChange={handleStreetChange}
           area="street"
+          required
         />
         <AddressInput
           placeholder="Número"
           value={address.number}
           onChange={handleNumberChange}
           area="number"
+          required
         />
         <AddressInput
           placeholder="Compemento"
@@ -84,18 +87,21 @@ export function AddressForm() {
           value={address.district}
           onChange={handleDistrictChange}
           area="district"
+          required
         />
         <AddressInput
           placeholder="Cidade"
           value={address.city}
           onChange={handleCityChange}
           area="city"
+          required
         />
         <AddressInput
           placeholder="UF"
           value={address.state}
           onChange={handleStateChange}
           area="state"
+          required
         />
       </AddressGrid>
     </AddressFormContainer>
