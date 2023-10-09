@@ -18,13 +18,14 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeCardProps) {
-  const [quantity, setQuantity] = useState(0)
-  const { addItem } = useContext(CartContext)
+  const { items, addItem } = useContext(CartContext)
+  const coffeeItem = items.find((item) => item.coffee.name === coffee.name)
+
+  const [quantity, setQuantity] = useState(coffeeItem ? coffeeItem.quantity : 0)
 
   function handleCoffeeSubmit(evt: FormEvent) {
     evt.preventDefault()
     addItem(coffee, quantity)
-    setQuantity(0)
   }
 
   function handleQuantityChange(value: number) {

@@ -37,37 +37,7 @@ export function cartReducer(state: CartState, action: CartAction) {
           return
         }
 
-        existingItem.quantity += quantity
-      })
-
-    case CartActionTypes.INCREMENT__ITEM:
-      return produce(state, (draft) => {
-        const coffeeToIncrement = action.payload.item
-
-        const item = draft.items.find(
-          (item) => coffeeToIncrement.name === item.coffee.name,
-        )
-
-        if (!item) {
-          draft.items.push({ coffee: coffeeToIncrement, quantity: 1 })
-        } else if (item.quantity + 1 < 100) {
-          item.quantity += 1
-        }
-      })
-
-    case CartActionTypes.DECREMENT_ITEM:
-      return produce(state, (draft) => {
-        const coffeeToDecrement = action.payload.item
-
-        const item = draft.items.find(
-          (item) => coffeeToDecrement.name === item.coffee.name,
-        )
-
-        if (!item) return
-
-        if (item.quantity - 1 > 0) {
-          item.quantity -= 1
-        }
+        existingItem.quantity = quantity
       })
     case CartActionTypes.REMOVE_ITEM:
       return produce(state, (draft) => {

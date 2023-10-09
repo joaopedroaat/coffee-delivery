@@ -17,13 +17,13 @@ interface CartListItemProps {
 }
 
 export function CartListItem({ item }: CartListItemProps) {
-  const { incrementItem, decrementItem, removeItem } = useContext(CartContext)
+  const { addItem, removeItem } = useContext(CartContext)
 
   function handleProductQuantityChange(value: number) {
     if (item.quantity < value) {
-      incrementItem(item.coffee)
+      addItem(item.coffee, value)
     } else {
-      decrementItem(item.coffee)
+      addItem(item.coffee, value)
     }
   }
 
