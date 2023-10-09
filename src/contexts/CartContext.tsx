@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useReducer } from 'react'
+import { ReactNode, createContext, useEffect, useReducer } from 'react'
 import {
   addItemAction,
   emptyCartAction,
@@ -35,6 +35,21 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   function emptyCart() {
     dispatch(emptyCartAction())
   }
+
+  useEffect(() => {
+    // Load from local storage
+    const storedItemsData = localStorage.getItem('@coffee-delivery/cart-items')
+    const storedItems = storedItemsData
+      ? (JSON.parse(storedItemsData) as CartItem[])
+      : []
+
+    storedItems.forEach((item) => addItem(item.coffee, item.quantity))
+  }, [])
+
+  useEffect(() => {
+    // Save on local storage
+    localStorage.setItem('@coffee-delivery/cart-items', JSON.stringify(items))
+  }, [items])
 
   return (
     <CartContext.Provider

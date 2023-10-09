@@ -14,7 +14,7 @@ interface StepperInputProps {
 export function StepperInput({ value, onChange }: StepperInputProps) {
   const handleDecrease = (evt: FormEvent) => {
     evt.preventDefault()
-    if (value > 0) {
+    if (value > 1) {
       onChange(value - 1)
     }
   }
