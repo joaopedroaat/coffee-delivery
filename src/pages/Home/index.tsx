@@ -13,7 +13,7 @@ export function Home() {
     <HomeContainer>
       <HomeInfo />
       <CoffeeList />
-      {items.length && (
+      {items.length > 0 && (
         <NavLink to="checkout" title="Carrinho">
           <CartInfo>
             <ShoppingCartSimple size={24} />
