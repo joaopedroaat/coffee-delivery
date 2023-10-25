@@ -16,6 +16,11 @@ export const PaymentMethodList = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
+
+  @media (max-width: 860px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const PaymentMethod = styled.div`

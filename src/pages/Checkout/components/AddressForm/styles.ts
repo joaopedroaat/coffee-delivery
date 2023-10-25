@@ -22,6 +22,11 @@ export const AddressGrid = styled.div`
     'street street street street'
     'number complement complement complement'
     'district city city state';
+
+  @media (max-width: 860px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const AddressInput = styled.input<AddressInputProps>`

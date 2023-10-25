@@ -16,6 +16,18 @@ export const CheckoutContainer = styled.main`
     grid-column-gap: 2rem;
     align-items: flex-start;
   }
+
+  @media (max-width: 1200px) {
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      div {
+        width: 100%;
+      }
+    }
+  }
 `
 
 export const FormContainer = styled.div`
