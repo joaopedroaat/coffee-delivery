@@ -3,10 +3,6 @@ import styled from 'styled-components'
 export const SuccessContainer = styled.main`
   margin-top: 5rem;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-
   h1 {
     font-family: 'Baloo 2', cursive;
     color: ${(props) => props.theme['yellow-dark']};
@@ -22,11 +18,18 @@ export const SuccessContainer = styled.main`
   }
 `
 
+export const SuccessHeader = styled.header`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+`
+
 export const DeliveryInfoContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 6.375rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
 `
 
 export const DeliveryInfoBox = styled.ul`
@@ -45,6 +48,7 @@ export const DeliveryInfoBox = styled.ul`
   li {
     display: flex;
     gap: 0.75rem;
+    width: 100%;
 
     span {
       font-weight: 700;

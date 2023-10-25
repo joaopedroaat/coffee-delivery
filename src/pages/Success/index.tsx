@@ -4,6 +4,7 @@ import {
   DeliveryInfoContainer,
   SuccessContainer,
   ListIcon,
+  SuccessHeader,
 } from './styles'
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
@@ -21,10 +22,10 @@ export function Success() {
 
   return (
     <SuccessContainer>
-      <div>
+      <SuccessHeader>
         <h1>Uhu! Pedido confirmado</h1>
         <p>Agora é só aguardar que logo o café chegará até você</p>
-      </div>
+      </SuccessHeader>
       <DeliveryInfoContainer>
         <DeliveryInfoBox>
           <li>
@@ -66,9 +67,7 @@ export function Success() {
             </div>
           </li>
         </DeliveryInfoBox>
-        <div>
-          <img src="./src/assets/motoboy.svg" alt="" />
-        </div>
+        <img src="./src/assets/motoboy.svg" alt="" />
       </DeliveryInfoContainer>
     </SuccessContainer>
   )
