@@ -1,6 +1,6 @@
-import { ICoffee } from '../pages/Home/components/CoffeeList/components/CoffeeCard/components/CoffeeCardForm'
+import { Coffee } from '../reducers/cart/reducer'
 
-export const coffeeData: ICoffee[] = [
+export const coffeeData: Coffee[] = [
   {
     name: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
