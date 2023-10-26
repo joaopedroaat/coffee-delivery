@@ -67,7 +67,7 @@ export function Success() {
             </div>
           </li>
         </DeliveryInfoBox>
-        <img src="./src/assets/motoboy.svg" alt="" />
+        <img src="motoboy.svg" alt="" />
       </DeliveryInfoContainer>
     </SuccessContainer>
   )

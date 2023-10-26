@@ -4,7 +4,7 @@ import { HomeInfoContainer, ListIcon } from './styles'
 export function HomeInfo() {
   return (
     <HomeInfoContainer>
-      <img src="./src/assets/homepage-coffee-image.svg" alt="" />
+      <img src="/homepage-hero.svg" alt="" />
       <div>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <h2>
