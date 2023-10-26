@@ -8,6 +8,7 @@ import {
 } from './styles'
 import { CheckoutContext } from '../../contexts/CheckoutContext'
 import { CurrencyDollar, MapPin, Timer } from '@phosphor-icons/react'
+import motoboySvg from '../../assets/motoboy.svg'
 
 /* eslint-disable no-unused-vars */
 enum PaymentEnum {
@@ -67,7 +68,7 @@ export function Success() {
             </div>
           </li>
         </DeliveryInfoBox>
-        <img src="motoboy.svg" alt="" />
+        <img src={motoboySvg} alt="" />
       </DeliveryInfoContainer>
     </SuccessContainer>
   )

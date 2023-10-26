@@ -33,7 +33,7 @@ export function CartListItem({ item }: CartListItemProps) {
 
   return (
     <CartListItemContainer>
-      <CartItemImage src={`coffeeImages/${item.coffee.img}`} />
+      <CartItemImage src={item.coffee.img} />
       <DataContainer>
         <Info>
           <p>{item.coffee.name}</p>

@@ -1,10 +1,11 @@
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 import { HomeInfoContainer, ListIcon } from './styles'
+import homePageHero from '../../../../assets/homepage-hero.svg'
 
 export function HomeInfo() {
   return (
     <HomeInfoContainer>
-      <img src="/homepage-hero.svg" alt="" />
+      <img src={homePageHero} alt="" />
       <div>
         <h1>Encontre o café perfeito para qualquer hora do dia</h1>
         <h2>

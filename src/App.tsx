@@ -10,7 +10,7 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <BrowserRouter>
+      <BrowserRouter basename="coffee-delivery">
         <CartContextProvider>
           <CheckoutContextProvider>
             <Router />

@@ -6,10 +6,10 @@ import {
   LocationButton,
   CartItemCount,
 } from './styles'
-
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../../../contexts/CartContext'
+import coffeeDeliveryLogo from '../../../assets/coffee-delivery-logo.svg'
 
 export function Header() {
   const { items } = useContext(CartContext)
@@ -17,7 +17,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <NavLink to="/" title="Início">
-        <img src="coffee-delivery-logo.svg" alt="" />
+        <img src={coffeeDeliveryLogo} alt="" />
       </NavLink>
       <HeaderNavigation>
         <LocationButton>
